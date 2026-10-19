@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
 import type { VocabEntry } from './lib/types';
+import SettingsShortcut from './components/SettingsShortcut';
 
 const navItems = [
   { to: '/', label: '仪表盘' },
@@ -54,6 +55,9 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
+
+        {/* Settings quick shortcut button */}
+        <SettingsShortcut />
       </div>
     </BrowserRouter>
   );
