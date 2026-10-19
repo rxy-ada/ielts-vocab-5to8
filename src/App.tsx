@@ -2,6 +2,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
 import type { VocabEntry } from './lib/types';
 import SettingsShortcut from './components/SettingsShortcut';
+import SettingsPage from './pages/SettingsPage';
 
 const navItems = [
   { to: '/', label: '仪表盘' },
@@ -373,35 +374,6 @@ function StatsPage() {
           <div className="mt-2 text-3xl font-bold">{value}</div>
         </div>
       ))}
-    </div>
-  );
-}
-
-function SettingsPage() {
-  return (
-    <div className="space-y-4 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-      <div>
-        <label className="mb-2 block text-sm font-medium">每日新词目标</label>
-        <input type="number" defaultValue={20} className="w-full rounded-xl border border-slate-200 px-3 py-2" />
-      </div>
-      <div>
-        <label className="mb-2 block text-sm font-medium">目标分数</label>
-        <select defaultValue={7} className="w-full rounded-xl border border-slate-200 px-3 py-2">
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7</option>
-          <option value={8}>8</option>
-        </select>
-      </div>
-      <div className="flex items-center justify-between rounded-2xl bg-slate-50 p-3">
-        <span>提醒开关</span>
-        <button type="button" className="rounded-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white">开启</button>
-      </div>
-      <div className="flex gap-2">
-        <button type="button" className="rounded-xl bg-slate-100 px-4 py-2 text-sm font-semibold">导出 JSON</button>
-        <button type="button" className="rounded-xl bg-slate-100 px-4 py-2 text-sm font-semibold">导入 JSON</button>
-        <button type="button" className="rounded-xl bg-rose-100 px-4 py-2 text-sm font-semibold text-rose-700">清空数据</button>
-      </div>
     </div>
   );
 }
